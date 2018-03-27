@@ -20,14 +20,10 @@ void setup() {
   digitalWrite(9,HIGH);
   digitalWrite(10,HIGH);
   radio.begin();
-  //radio.openReadingPipe(0, address);//00001
-  //radio.openReadingPipe(1,address[0]);//00002
+  
   radio.setPALevel(RF24_PA_MAX);
   radio.setDataRate(RF24_1MBPS);
   
-  //Serial.println("Welcome to Water Ground Level Controller");
-  
-
   //moto relay Switch
   pinMode(9 , OUTPUT); // 1st motor Pin Relay
   pinMode(10, OUTPUT); // 2nd Relay Pin
@@ -147,9 +143,7 @@ if(digitalRead(2) == LOW){
     //Serial.println(text);
     
    if(text[0] == 'F'){
-//      digitalWrite(10, LOW); // Active Low turn on
-//      delay(5000);
-//      digitalWrite(10, HIGH);
+
       digitalWrite(5, LOW); // Turn on all the Led Showing the status 
       digitalWrite(4, LOW);
       digitalWrite(3, LOW);
